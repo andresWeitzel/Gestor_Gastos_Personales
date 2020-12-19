@@ -1,0 +1,13 @@
+mypackage\test\TestConnector.class
+mypackage\gui\JFrameMenuGestorGastos$3.class
+mypackage\gui\JFrameMenuGestorGastos$4.class
+mypackage\gui\JFrameMenuGestorGastos$2.class
+mypackage\gui\JFrameMenuGestorGastos$5.class
+mypackage\gui\JFrameMenuGestorGastos.class
+mypackage\gui\JFrameMenuGestorGastos$1.class
+mypackage\test\TestGasto.class
+mypackage\entities\Gasto.class
+mypackage\repositories\interfaces\I_GastoRepository.class
+mypackage\repositories\jdbc\GastoRepository.class
+mypackage\connector\RemoteConnector.class
+mypackage\connector\LocalConnector.class
