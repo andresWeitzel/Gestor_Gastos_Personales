@@ -16,15 +16,12 @@
 
 | **Dependencia Maven** | **Finalidad** |               
 | ------------- | ------------- |
-| mysql-connector-8.0.21|  Conexion e implementación de queries a la db mysql |
+| mysql-connector-8.0.21|  Conexion e implementación de queries a la db con mysql |
 
 * Repositorio dependencia: https://mvnrepository.com/artifact/mysql/mysql-connector-java/8.0.21
 
-
-
 </br>
 
- 
  ## Patrones de Diseño Implementados
  * **Singleton** 
  * **Dao** 
