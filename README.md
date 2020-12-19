@@ -14,16 +14,16 @@
 
 </br>
 
-| **Dependencias Maven** | **Finalidad** |               
+| **Dependencia Maven** | **Finalidad** |               
 | ------------- | ------------- |
 | mysql-connector-8.0.21|  Conexion e implementación de queries a la db mysql |
  
- <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.21</version>
-</dependency> 
+### <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+### <dependency>
+###    <groupId>mysql</groupId>
+###    <artifactId>mysql-connector-java</artifactId>
+###    <version>8.0.21</version>
+### </dependency> 
 
 
 
