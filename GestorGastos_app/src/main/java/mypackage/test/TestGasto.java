@@ -57,16 +57,20 @@ public class TestGasto {
         System.out.println(gastoRepository.getById(3));
     
        System.out.println("\n================= Gasto cuyo precio de compra sea $300===============\n");
-        System.out.println(gastoRepository.getLikePrecioCompras(300));
+        System.out.println(gastoRepository.getByPrecioCompras(300));
         
         
        System.out.println("\n================= Gasto cuyo precio de compra sea mayor a  $600===============\n");
-        System.out.println(gastoRepository.getLikePrecioComprasMayorQue(600));
+        System.out.println(gastoRepository.getByPrecioComprasMayorQue(600));
     
         
        System.out.println("\n================= Gasto cuyo precio de compra sea menor a $200===============\n");
-        System.out.println(gastoRepository.getLikePrecioComprasMenorQue(200));
+        System.out.println(gastoRepository.getByPrecioComprasMenorQue(200));
     
+               System.out.println("\n================= Sumatoria de Gastos de compras===============\n");
+    // gastoRepository.getSumaTotalCompras().forEach(System.out::println);
+    System.out.println(gastoRepository.getSumaTotalCompras());
+        
     
       
     

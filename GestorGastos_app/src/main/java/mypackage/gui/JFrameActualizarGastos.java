@@ -16,12 +16,13 @@ import mypackage.repositories.jdbc.GastoRepository;
  *
  * @author andre
  */
-public class JFrameMenuGestorGastos extends javax.swing.JFrame {
+public class JFrameActualizarGastos extends javax.swing.JFrame {
+    
+       private I_GastoRepository gastoRepository = new GastoRepository(LocalConnector.getLocalConnection());
 
-    private I_GastoRepository gastoRepository = new GastoRepository(LocalConnector.getLocalConnection());
 
-    /** Creates new form JFrameMenuGastos */
-    public JFrameMenuGestorGastos() {
+    /** Creates new form JFrameActualizarGastos */
+    public JFrameActualizarGastos() {
         initComponents();
     }
 
@@ -36,7 +37,7 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jLabelTitulo = new javax.swing.JLabel();
-        jLabelPrecioCompras = new javax.swing.JLabel();
+        jLabelId = new javax.swing.JLabel();
         jTextFieldPrecioCompras = new javax.swing.JTextField();
         jLabelComentarioCompras = new javax.swing.JLabel();
         jTextFieldPrecioServicios = new javax.swing.JTextField();
@@ -53,30 +54,31 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
         jTextFieldComentarioServicios = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jButtonLimpiar = new javax.swing.JButton();
-        jButtonAgregar = new javax.swing.JButton();
+        jButtonActualizar = new javax.swing.JButton();
         jButtonVerGastos = new javax.swing.JButton();
         jLabelFecha = new javax.swing.JLabel();
         jTextFieldFecha = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jButtonAnalytics = new javax.swing.JButton();
         jLabelFecha1 = new javax.swing.JLabel();
+        jLabelPrecioCompras = new javax.swing.JLabel();
+        jTextFieldId = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jDesktopPane1.setForeground(new java.awt.Color(18, 16, 66));
         jDesktopPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitulo.setFont(new java.awt.Font("Arial Black", 1, 28)); // NOI18N
         jLabelTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTitulo.setText("GESTOR DE GASTOS");
-        jDesktopPane1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, -1, 50));
+        jLabelTitulo.setText("ACTUALIZACION DE GASTOS");
+        jDesktopPane1.add(jLabelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, 50));
 
-        jLabelPrecioCompras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabelPrecioCompras.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPrecioCompras.setText("Precio de Compras: $");
-        jDesktopPane1.add(jLabelPrecioCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 50));
+        jLabelId.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelId.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelId.setText("ID:");
+        jDesktopPane1.add(jLabelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, 30, 50));
 
         jTextFieldPrecioCompras.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldPrecioCompras.setText("0.00");
@@ -90,7 +92,7 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
                 jTextFieldPrecioComprasKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldPrecioCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 190, 30));
+        jDesktopPane1.add(jTextFieldPrecioCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 190, 30));
 
         jLabelComentarioCompras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelComentarioCompras.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,16 +157,16 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
                 jButtonLimpiarActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 650, 110, 50));
+        jDesktopPane1.add(jButtonLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 650, 120, 50));
 
-        jButtonAgregar.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jButtonAgregar.setText("Agregar");
-        jButtonAgregar.addActionListener(new java.awt.event.ActionListener() {
+        jButtonActualizar.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jButtonActualizar.setText("Actualizar");
+        jButtonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAgregarActionPerformed(evt);
+                jButtonActualizarActionPerformed(evt);
             }
         });
-        jDesktopPane1.add(jButtonAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 650, 110, 50));
+        jDesktopPane1.add(jButtonActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 650, 130, 50));
 
         jButtonVerGastos.setBackground(new java.awt.Color(0, 34, 103));
         jButtonVerGastos.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -207,104 +209,43 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
         jLabelFecha1.setText("(ej: 2020-01-01)");
         jDesktopPane1.add(jLabelFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 130, 40));
 
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 780));
+        jLabelPrecioCompras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelPrecioCompras.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPrecioCompras.setText("Precio de Compras: $");
+        jDesktopPane1.add(jLabelPrecioCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, 50));
+
+        jTextFieldId.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jTextFieldId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldIdActionPerformed(evt);
+            }
+        });
+        jTextFieldId.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldIdKeyTyped(evt);
+            }
+        });
+        jDesktopPane1.add(jTextFieldId, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 90, 30));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 787, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 787, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
-
-        jTextFieldPrecioCompras.setText("0.00");
-        jTextFieldComentarioCompras.setText("");
-        jTextFieldPrecioServicios.setText("0.00");
-        jTextFieldComentarioServicios.setText("");
-        jTextFieldPrecioTransporte.setText("0.00");
-        jTextFieldComentarioTransporte.setText("");
-        jTextFieldFecha.setText("");
-    }//GEN-LAST:event_jButtonLimpiarActionPerformed
-
-    private void jButtonVerGastosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerGastosActionPerformed
-        new JFrameVerGastos().setVisible(true);
-    }//GEN-LAST:event_jButtonVerGastosActionPerformed
-
-    private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonAnalyticsActionPerformed
-
-    private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
-        boolean flagAgregarNuevogasto = true;
-
-        if (jTextFieldFecha.getText().equals("")
-                || (  jTextFieldPrecioCompras.getText().equals("0.00")
-                            && jTextFieldPrecioServicios.getText().equals("0.00")
-                            && jTextFieldPrecioTransporte.getText().equals("0.00")
-                            
-                )) {
-
-            flagAgregarNuevogasto = false;
-
-            JOptionPane.showMessageDialog(null, "SE DEBE INGRESAR UNA FECHA Y UN GASTO");
-
-
-        
-        }else if (jTextFieldComentarioCompras.getText().length() > 22
-                || jTextFieldComentarioServicios.getText().length() > 22
-                || jTextFieldComentarioTransporte.getText().length() > 22) {
-
-            flagAgregarNuevogasto = false;
-
-            JOptionPane.showMessageDialog(null, "LOS COMENTARIOS NO DEBEN SUPERAR LOS 22 CARACTERES");
-
-        } else if ( ! (jTextFieldFecha.getText().contains("-"))
-                || jTextFieldFecha.getText().length() < 10
-                || jTextFieldFecha.getText().length() > 10
-                ) {
-
-            flagAgregarNuevogasto = false;
-
-            JOptionPane.showMessageDialog(null, "ASEGURESE QUE EL FORMATO DE FECHA ES CORRECTO (EJ: 2020-08-09)");
-
-        }else {
-            if (flagAgregarNuevogasto) {
-
-                Gasto nuevoGasto
-                        = new Gasto(
-                                Float.valueOf(jTextFieldPrecioCompras.getText()),
-                                jTextFieldComentarioCompras.getText(),
-                                Float.valueOf(jTextFieldPrecioServicios.getText()),
-                                jTextFieldComentarioServicios.getText(),
-                                Float.valueOf(jTextFieldPrecioTransporte.getText()),
-                                jTextFieldComentarioTransporte.getText(),
-                                jTextFieldFecha.getText()
-                        );
-
-                gastoRepository.save(nuevoGasto);
-
-                String separador = "--------------------------------------------------------------------";
-                String salto="\n";
-
-                JOptionPane.showMessageDialog(null,
-                        "NUEVO GASTO AGREGADO!\n"
-                        + separador
-                        + "\nID:                                 " + nuevoGasto.getId()
-                        + salto
-                        + "\nCOMPRAS:               $" + nuevoGasto.getPrecio_compras()
-                        + "\nCOMENTARIO:         " + nuevoGasto.getComentario_compras()
-                        + salto
-                        + "\nSERVICIOS:                $" + nuevoGasto.getPrecio_servicios()
-                        + "\nCOMENTARIO:           " + nuevoGasto.getComentario_servicios()
-                        + salto
-                        + "\nTRANSPORTE:           $ " + nuevoGasto.getPrecio_transporte()
-                        + "\nCOMENTARIO:             " + nuevoGasto.getComentario_transporte()
-                        + salto
-                        + "\nFECHA:                              " + nuevoGasto.getFecha() + "\n"
-                        + separador
-                );
-
-            }
-
-        }
-    }//GEN-LAST:event_jButtonAgregarActionPerformed
 
     private void jTextFieldPrecioComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPrecioComprasActionPerformed
         // TODO add your handling code here:
@@ -317,31 +258,30 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
             && (caracter != '.')
             && (caracter != (char) KeyEvent.VK_BACK_SPACE)
             && (caracter != (char) KeyEvent.VK_ENTER)
-                )
+        )
         {
 
             evt.consume();
 
             JOptionPane.showMessageDialog(null, "SOLO PERMITIDO FORMATO NUMERICO! (EJ: $230.90)");
-        
-        
+
         }
     }//GEN-LAST:event_jTextFieldPrecioComprasKeyTyped
 
     private void jTextFieldPrecioServiciosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPrecioServiciosKeyTyped
-       char caracter = evt.getKeyChar();
+        char caracter = evt.getKeyChar();
 
         if ((caracter < '0' || caracter > '9')
             && (caracter != '.')
             && (caracter != (char) KeyEvent.VK_BACK_SPACE)
             && (caracter != (char) KeyEvent.VK_ENTER)
-                )
+        )
         {
 
             evt.consume();
 
             JOptionPane.showMessageDialog(null, "SOLO PERMITIDO FORMATO NUMERICO! (EJ: $230.90)");
-        
+
         }
     }//GEN-LAST:event_jTextFieldPrecioServiciosKeyTyped
 
@@ -352,33 +292,159 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
             && (caracter != '.')
             && (caracter != (char) KeyEvent.VK_BACK_SPACE)
             && (caracter != (char) KeyEvent.VK_ENTER)
-                )
+        )
         {
 
             evt.consume();
 
             JOptionPane.showMessageDialog(null, "SOLO PERMITIDO FORMATO NUMERICO! (EJ: $230.90)");
-        
+
         }
     }//GEN-LAST:event_jTextFieldPrecioTransporteKeyTyped
 
+    private void jButtonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLimpiarActionPerformed
+
+        jTextFieldPrecioCompras.setText("0.00");
+        jTextFieldComentarioCompras.setText("");
+        jTextFieldPrecioServicios.setText("0.00");
+        jTextFieldComentarioServicios.setText("");
+        jTextFieldPrecioTransporte.setText("0.00");
+        jTextFieldComentarioTransporte.setText("");
+        jTextFieldFecha.setText("");
+    }//GEN-LAST:event_jButtonLimpiarActionPerformed
+
+    private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
+        boolean flagAgregarNuevogasto = true;
+
+      if (jTextFieldId.getText().equals("") 
+                    || jTextFieldId.getText().length() < 1 ) {
+
+                flagAgregarNuevogasto = false;
+
+                JOptionPane.showMessageDialog(null, "SE DEBE INGRESAR UN ID VALIDO");
+
+            }else if (jTextFieldFecha.getText().equals("")
+            || (  jTextFieldPrecioCompras.getText().equals("0.00")
+                && jTextFieldPrecioServicios.getText().equals("0.00")
+                && jTextFieldPrecioTransporte.getText().equals("0.00")
+
+            )) {
+
+                flagAgregarNuevogasto = false;
+
+                JOptionPane.showMessageDialog(null, "SE DEBE INGRESAR UNA FECHA Y UN GASTO");
+
+            }else if (jTextFieldId.getText().equals("") 
+                    || jTextFieldId.getText().length() < 1 ) {
+
+                flagAgregarNuevogasto = false;
+
+                JOptionPane.showMessageDialog(null, "SE DEBE INGRESAR UN ID VALIDO");
+
+            } else if (jTextFieldComentarioCompras.getText().length() > 22
+                || jTextFieldComentarioServicios.getText().length() > 22
+                || jTextFieldComentarioTransporte.getText().length() > 22) {
+
+                flagAgregarNuevogasto = false;
+
+                JOptionPane.showMessageDialog(null, "LOS COMENTARIOS NO DEBEN SUPERAR LOS 22 CARACTERES");
+
+            } else if ( ! (jTextFieldFecha.getText().contains("-"))
+                || jTextFieldFecha.getText().length() < 10
+                || jTextFieldFecha.getText().length() > 10
+            ) {
+
+                flagAgregarNuevogasto = false;
+
+                JOptionPane.showMessageDialog(null, "ASEGURESE QUE EL FORMATO DE FECHA ES CORRECTO (EJ: 2020-08-09)");
+
+            }else {
+                if (flagAgregarNuevogasto) {
+
+                    Gasto gastoActualizado
+                    = new Gasto(
+                         Integer.valueOf(jTextFieldId.getText()),
+                        Float.valueOf(jTextFieldPrecioCompras.getText()),
+                        jTextFieldComentarioCompras.getText(),
+                        Float.valueOf(jTextFieldPrecioServicios.getText()),
+                        jTextFieldComentarioServicios.getText(),
+                        Float.valueOf(jTextFieldPrecioTransporte.getText()),
+                        jTextFieldComentarioTransporte.getText(),
+                        jTextFieldFecha.getText()
+                    );
+
+                    gastoRepository.update(gastoActualizado);
+
+                    String separador = "--------------------------------------------------------------------";
+                    String salto="\n";
+
+                    JOptionPane.showMessageDialog(null,
+                        "NUEVO GASTO ACTUALIZADO!\n"
+                        + separador
+                        + "\nID:                                 " + gastoActualizado.getId()
+                        + salto
+                        + "\nCOMPRAS:               $" + gastoActualizado.getPrecio_compras()
+                        + "\nCOMENTARIO:         " + gastoActualizado.getComentario_compras()
+                        + salto
+                        + "\nSERVICIOS:                $" + gastoActualizado.getPrecio_servicios()
+                        + "\nCOMENTARIO:           " + gastoActualizado.getComentario_servicios()
+                        + salto
+                        + "\nTRANSPORTE:           $ " + gastoActualizado.getPrecio_transporte()
+                        + "\nCOMENTARIO:             " + gastoActualizado.getComentario_transporte()
+                        + salto
+                        + "\nFECHA:                              " + gastoActualizado.getFecha() + "\n"
+                        + separador
+                    );
+
+                }
+
+            }
+    }//GEN-LAST:event_jButtonActualizarActionPerformed
+
+    private void jButtonVerGastosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerGastosActionPerformed
+        new JFrameVerGastos().setVisible(true);
+    }//GEN-LAST:event_jButtonVerGastosActionPerformed
+
     private void jTextFieldFechaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldFechaKeyTyped
-          char caracter = evt.getKeyChar();
+        char caracter = evt.getKeyChar();
 
         if ((caracter < '0' || caracter > '9')
             && (caracter != '-')
             && (caracter != (char) KeyEvent.VK_BACK_SPACE)
             && (caracter != (char) KeyEvent.VK_ENTER)
-                )
+        )
         {
 
             evt.consume();
 
             JOptionPane.showMessageDialog(null, "SOLO PERMITIDO FORMATO FECHA (EJ: 2020-07-12)!");
-        
+
         }
-                                    
+
     }//GEN-LAST:event_jTextFieldFechaKeyTyped
+
+    private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
+    new JFrameAnalytics().setVisible(true);    }//GEN-LAST:event_jButtonAnalyticsActionPerformed
+
+    private void jTextFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldIdActionPerformed
+
+    private void jTextFieldIdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldIdKeyTyped
+            char caracter = evt.getKeyChar();
+
+        if ((caracter < '0' || caracter > '9')
+            && (caracter != (char) KeyEvent.VK_BACK_SPACE)
+            && (caracter != (char) KeyEvent.VK_ENTER)
+        )
+        {
+
+            evt.consume();
+
+            JOptionPane.showMessageDialog(null, "EL ID SOLO POSEE FORMATO NUMERICO");
+
+        }
+    }//GEN-LAST:event_jTextFieldIdKeyTyped
 
     /**
      * @param args the command line arguments
@@ -397,27 +463,26 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameMenuGestorGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameMenuGestorGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameMenuGestorGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameMenuGestorGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameActualizarGastos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrameMenuGestorGastos().setVisible(true);
+                new JFrameActualizarGastos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAgregar;
+    private javax.swing.JButton jButtonActualizar;
     private javax.swing.JButton jButtonAnalytics;
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JButton jButtonVerGastos;
@@ -427,6 +492,7 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelComentarioTransporte;
     private javax.swing.JLabel jLabelFecha;
     private javax.swing.JLabel jLabelFecha1;
+    private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelPrecioCompras;
     private javax.swing.JLabel jLabelPrecioServicios;
     private javax.swing.JLabel jLabelPrecioTransporte;
@@ -440,6 +506,7 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldComentarioServicios;
     private javax.swing.JTextField jTextFieldComentarioTransporte;
     private javax.swing.JTextField jTextFieldFecha;
+    private javax.swing.JTextField jTextFieldId;
     private javax.swing.JTextField jTextFieldPrecioCompras;
     private javax.swing.JTextField jTextFieldPrecioServicios;
     private javax.swing.JTextField jTextFieldPrecioTransporte;

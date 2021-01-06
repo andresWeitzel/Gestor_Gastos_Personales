@@ -15,6 +15,9 @@ public class Gasto {
 
     public Gasto() {
     }
+    public Gasto(float precio_compras){
+        this.precio_compras=precio_compras;
+    }
     
     public Gasto(float precio_compras, String comentario_compras, float precio_servicios, String comentario_servicios, float precio_transporte, String comentario_transporte, String fecha) {
         this.precio_compras = precio_compras;
