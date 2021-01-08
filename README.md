@@ -57,11 +57,11 @@
 
 #### 1)Descargar la herramienta en ```https://cygwin.com/install.html``` dependiendo la arquitectura que se tenga (32-64 bits), como toda aplicacion siguiente.... siguiente....```(IMPORTANTE:NO TENER ABIERTO EL IDE DURANTE LA INSTALACION, SINO NO RECONOCE EL PATH)```
 #### 2)Abrir el IDE Netbeans, seguidamente seleccionar el proyecto para implementar git, ir a la barra del ide y clickear ```Tools->Open in terminal```
-#### 3)Te debería aparecer algo parecido a esto..
+#### 3)Te debería aparecer algo parecido a esto..(Ruta Absoluta de tu proyecto)
 ```andre@DESKTOP-7BN69K1/cygdrive/c/Users/andre/OneDrive/Escritorio/LenguajesProgramacion/JAVASE/Proyectos/GestorGastos_app```
 #### 4)Crear un nuevo repositorio y comenzar con git
 
-
+</br>
 
 ## Subir el proyecto al repositorio con la terminal a traves de Cygwin en Netbeans
 
