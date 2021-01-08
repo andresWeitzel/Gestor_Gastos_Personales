@@ -69,9 +69,9 @@ public class TestGasto {
     
                System.out.println("\n================= Sumatoria de Gastos de compras===============\n");
     // gastoRepository.getSumaTotalCompras().forEach(System.out::println);
-    System.out.println(gastoRepository.getSumaTotalCompras());
+    gastoRepository.getSumaTotalCompras().forEach(System.out::println);
         
-    
+  
       
     
     // -----------FIN SELECT---------------

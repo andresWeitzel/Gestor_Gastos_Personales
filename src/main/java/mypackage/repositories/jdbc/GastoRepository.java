@@ -128,18 +128,11 @@ public class GastoRepository implements I_GastoRepository {
         try ( ResultSet resultSetGastos2
                 = conexionDB
                         .createStatement()
-                        .executeQuery("SELECT  SUM(precio_compras) FROM  gastos")) {
+                        .executeQuery("SELECT  COUNT(precio_compras) FROM  gastos")) {
                     while (resultSetGastos2.next()) {
 
                         listaGastos2.add(new Gasto(
-                               resultSetGastos2.getInt("id"),
-                                resultSetGastos2.getFloat("precio_compras"),
-                                resultSetGastos2.getString("comentario_compras"),
-                                resultSetGastos2.getFloat("precio_servicios"),
-                                resultSetGastos2.getString("comentario_servicios"),
-                                resultSetGastos2.getFloat("precio_transporte"),
-                                resultSetGastos2.getString("comentario_transporte"),
-                                resultSetGastos2.getString("fecha")
+                                resultSetGastos2.getFloat("precio_compras")
                         ));
 
                     }

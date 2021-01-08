@@ -15,7 +15,7 @@ public class Gasto {
 
     public Gasto() {
     }
-    public Gasto(float precio_compras){
+    public Gasto( float precio_compras){
         this.precio_compras=precio_compras;
     }
     
