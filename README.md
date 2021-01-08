@@ -60,6 +60,7 @@
 #### 3)Te debería aparecer algo parecido a esto..(Ruta Absoluta de tu proyecto)
 ```andre@DESKTOP-7BN69K1/cygdrive/c/Users/andre/OneDrive/Escritorio/LenguajesProgramacion/JAVASE/Proyectos/GestorGastos_app```
 #### 4)Crear un nuevo repositorio y comenzar con git
+#### 5) Más Información https://ourcodeworld.com/articles/read/680/how-to-configure-an-integrated-terminal-command-prompt-in-netbeans-for-windows
 
 </br>
 
