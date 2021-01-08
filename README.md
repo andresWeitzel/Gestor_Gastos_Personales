@@ -55,29 +55,28 @@
 
 ## Uso de Cygwin
 
-### 1)Descargar la herramienta en ``` https://cygwin.com/install.html ``` dependiendo la arquitectura que se tenga (32-64 bits), como toda
-aplicacion siguiente.... siguiente....```(IMPORTANTE:NO TENER ABIERTO EL IDE DURANTE LA INSTALACION, SINO NO RECONOCE EL PATH)```
-### 2)Abrir el IDE Netbeans, seguidamente seleccionar el proyecto para implementar git, ir a la barra del ide y clickear Tools->Open in terminal
-### 3)Te debería aparecer algo parecido a esto.. ```andre@DESKTOP-7BN69K1 /cygdrive/c/Users/andre/OneDrive/Escritorio/LenguajesProgramacion/JAVASE/Proyectos/GestorGastos_app```
-### 4)Crear un nuevo repositorio y comenzar con git
+#### 1)Descargar la herramienta en ```https://cygwin.com/install.html``` dependiendo la arquitectura que se tenga (32-64 bits), como toda aplicacion siguiente.... siguiente....```(IMPORTANTE:NO TENER ABIERTO EL IDE DURANTE LA INSTALACION, SINO NO RECONOCE EL PATH)```
+#### 2)Abrir el IDE Netbeans, seguidamente seleccionar el proyecto para implementar git, ir a la barra del ide y clickear ```Tools->Open in terminal```
+#### 3)Te debería aparecer algo parecido a esto.. ```andre@DESKTOP-7BN69K1 /cygdrive/c/Users/andre/OneDrive/Escritorio/LenguajesProgramacion/JAVASE/Proyectos/GestorGastos_app```
+#### 4)Crear un nuevo repositorio y comenzar con git
 
 
 
 ## Subir el proyecto al repositorio con la terminal a traves de Cygwin en Netbeans
 
-### 1)Inicializamos nuestro repositorio local .git en la ruta de nuestro proyecto
+#### 1)Inicializamos nuestro repositorio local .git en la ruta de nuestro proyecto
 * git init
 
-### 2)Agregamos lo desarrollado a nuestro repo local
+#### 2)Agregamos lo desarrollado a nuestro repo local
 * git add .
 
-### 3)Agregamos lo que tenemos en nuestro repo local al área de Trabajo.
+#### 3)Agregamos lo que tenemos en nuestro repo local al área de Trabajo.
 * git commit -m "agrega un comentario sin comillas"
 
-### 4)Le indicamos a git donde se va a almacenar nuestro proyecto(fijate en tu repositorio de github cual es el enlace de tu proyecto(esta en code)).
+#### 4)Le indicamos a git donde se va a almacenar nuestro proyecto(fijate en tu repositorio de github cual es el enlace de tu proyecto(esta en code)).
 * git remote add origin https://github.com/andresWeitzel/SitioWebTest_IT.git
 
-### 5)Subimos nuestro proyecto.
+#### 5)Subimos nuestro proyecto.
 * git push -u origin master
 
 
@@ -86,20 +85,20 @@ aplicacion siguiente.... siguiente....```(IMPORTANTE:NO TENER ABIERTO EL IDE DUR
 
 ## Actualización de el proyecto al repositorio con la terminal a traves de Cygwin en Netbeans
 
-### 1)Visualizamos las modificaciones realizadas en local
+#### 1)Visualizamos las modificaciones realizadas en local
 * git status
 
-### 2)Agregamos lo modificado al area de trabajo
+#### 2)Agregamos lo modificado al area de trabajo
 * git add *
 
-### 3)Confirmamos las modificaciones realizadas
+#### 3)Confirmamos las modificaciones realizadas
 * git commit
 
-### 4)Sincronizamos y traemos todos los cambios del repositorio remoto a la rama en la que estemos trabajando actualmente.
+#### 4)Sincronizamos y traemos todos los cambios del repositorio remoto a la rama en la que estemos trabajando actualmente.
 ##### (Desconozco porqué tengo que ejecutar este comando, supongo que será porque en el local tengo otros proyectos o porque mi master no es un branch, sino el main por defecto de gitHub(Yo realicé esa modificación para mejor visualización)).
 * git pull https://github.com/andresWeitzel/SitioWebTest_IT.git
 
-### 5)Enviamos todos los cambios al repo en github
+#### 5)Enviamos todos los cambios al repo en github
 * git push https://github.com/andresWeitzel/SitioWebTest_IT.git
 
 </br>
