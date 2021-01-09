@@ -5,6 +5,8 @@
  */
 package mypackage.gui;
 
+import static java.lang.Float.max;
+import static java.lang.Float.min;
 import java.util.List;
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
@@ -32,11 +34,14 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         new Table().cargar(jTableListaGastos, gastoRepository.getAll());
     }
     
-    public  double total(){
+    public  double totalPrecio(int columnaTabla){
+       
         float sum=0;
         try {
              for(int i=0; i<jTableListaGastos.getRowCount(); i++){
-            sum +=Float.parseFloat(jTableListaGastos.getValueAt(i,1).toString());
+                 
+            sum +=Math.round(Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString()));
+            
         }
             
         } catch (Exception e) {
@@ -45,6 +50,45 @@ public class JFrameVerGastos extends javax.swing.JFrame {
        
         return sum;
     }
+    
+    
+    
+        public  double maximoPrecio(int columnaTabla){
+        float max=0;
+        try {
+             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
+                 
+            max=Math.round(max(max,  Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString())));
+            
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       
+        return max;
+    }
+        
+        
+        
+        
+        public  double minimoPrecio(int columnaTabla){
+        float min=0;
+        try {
+             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
+                 
+            min=Math.round(min(min,  Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString())));
+           
+            
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       
+        return min;
+    }
+    
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -66,7 +110,6 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         jComboBoxBusquedaGastos = new javax.swing.JComboBox<>();
         jButtonRefrescarLista = new javax.swing.JButton();
         jButtonAnalytics = new javax.swing.JButton();
-        jTextFieldTotal = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -152,7 +195,6 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         jDesktopPane1.setLayer(jComboBoxBusquedaGastos, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButtonRefrescarLista, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jButtonAnalytics, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDesktopPane1.setLayer(jTextFieldTotal, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -163,14 +205,9 @@ public class JFrameVerGastos extends javax.swing.JFrame {
                 .addComponent(jLabelBusqueda)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxBusquedaGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jTextFieldBusquedaGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                        .addGap(431, 431, 431)
-                        .addComponent(jTextFieldTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                .addGap(8, 8, 8)
+                .addComponent(jTextFieldBusquedaGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(282, 282, 282))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -199,30 +236,24 @@ public class JFrameVerGastos extends javax.swing.JFrame {
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addComponent(jLabelTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelBusqueda, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jComboBoxBusquedaGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextFieldBusquedaGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelBusqueda, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jComboBoxBusquedaGastos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextFieldBusquedaGastos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(30, 30, 30)
+                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButtonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(14, 14, 14))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                        .addGap(30, 30, 30)
-                                        .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jButtonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jButtonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(14, 14, 14))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDesktopPane1Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButtonRefrescarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jTextFieldTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jButtonRefrescarLista, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jDesktopPane1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButtonAnalytics, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -331,7 +362,53 @@ public class JFrameVerGastos extends javax.swing.JFrame {
        
         //Enviamos lso datos al jframe de analytics
         //IMPORTANTE-->EL JTEXTFIELD DEL OTRO JFRAME DEBERA ESTAR EN PUBLIC Y STATIC
-        JFrameAnalytics.jTextFieldTotalCompras.setText(String.valueOf(total()));
+        
+        //------COMPRAS(columna 1)-----
+        //TOTAL 
+        JFrameAnalytics.jTextFieldTotalCompras.setText(String.valueOf(totalPrecio(1)));
+        
+        //MAXIMO 
+        JFrameAnalytics.jTextFieldPrecioMaxCompras.setText(String.valueOf(maximoPrecio(1)));
+        
+        //MINIMO 
+        JFrameAnalytics.jTextFieldPrecioMinCompras.setText(String.valueOf(minimoPrecio(1)));
+        
+        //----------FIN COMPRAS------------
+        
+        //-----------SERVICIOS(columna 3)-----------------
+                //TOTAL 
+        JFrameAnalytics.jTextFieldTotalServicios.setText(String.valueOf(totalPrecio(3)));
+        
+        //MAXIMO 
+        JFrameAnalytics.jTextFieldPrecioMaxServicios.setText(String.valueOf(maximoPrecio(3)));
+        
+        //MINIMO 
+        JFrameAnalytics.jTextFieldPrecioMinServicios.setText(String.valueOf(minimoPrecio(3)));
+        
+        //-----------FIN SERVICIOS------------
+        
+        
+        //---------TRANSPORTE(columna 5)--------------
+               //TOTAL 
+        JFrameAnalytics.jTextFieldTotalTransporte.setText(String.valueOf(totalPrecio(5)));
+        
+        //MAXIMO 
+        JFrameAnalytics.jTextFieldPrecioMaxTransporte.setText(String.valueOf(maximoPrecio(5)));
+        
+        //MINIMO 
+        JFrameAnalytics.jTextFieldPrecioMinTransporte.setText(String.valueOf(minimoPrecio(5)));
+
+        //---------FIN TRANSPORTE--------
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed
 
     /**
@@ -382,6 +459,5 @@ public class JFrameVerGastos extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableListaGastos;
     private javax.swing.JTextField jTextFieldBusquedaGastos;
-    private javax.swing.JTextField jTextFieldTotal;
     // End of variables declaration//GEN-END:variables
 }
