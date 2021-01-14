@@ -34,7 +34,9 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         new Table().cargar(jTableListaGastos, gastoRepository.getAll());
     }
     
-    public  double totalPrecio(int columnaTabla){
+    //-------------ANALYTICS------------------------
+    
+    public  double totalGasto(int columnaTabla){
        
         float sum=0;
         try {
@@ -51,9 +53,29 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         return sum;
     }
     
+    public  double promedioGastos(int columnaTabla){
+       
+        float sum=0;
+       float  promedio=0;
+        try {
+             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
+                 
+            sum +=Math.round(Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString()));
+            
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        promedio=Math.round(sum/jTableListaGastos.getRowCount());
+       
+        return promedio;
+    }
     
     
-        public  double maximoPrecio(int columnaTabla){
+    
+        public  double maximoGasto(int columnaTabla){
         float max=0;
         try {
              for(int i=0; i<jTableListaGastos.getRowCount(); i++){
@@ -72,7 +94,7 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         
         
         
-        public  double minimoPrecio(int columnaTabla){
+        public  double minimoGasto(int columnaTabla){
         float min=0;
         try {
              for(int i=0; i<jTableListaGastos.getRowCount(); i++){
@@ -88,6 +110,8 @@ public class JFrameVerGastos extends javax.swing.JFrame {
        
         return min;
     }
+    
+        //-------------ANALYTICS------------------------
     
 
     /** This method is called from within the constructor to
@@ -365,38 +389,44 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         
         //------COMPRAS(columna 1)-----
         //TOTAL 
-        JFrameAnalytics.jTextFieldTotalCompras.setText(String.valueOf(totalPrecio(1)));
+        JFrameAnalytics.jTextFieldTotalCompras.setText(String.valueOf(totalGasto(1)));
+        //PROMEDIO
+        JFrameAnalytics.jTextFieldpromedioCompras.setText(String.valueOf(promedioGastos(1)));
         
         //MAXIMO 
-        JFrameAnalytics.jTextFieldPrecioMaxCompras.setText(String.valueOf(maximoPrecio(1)));
+        JFrameAnalytics.jTextFieldPrecioMaxCompras.setText(String.valueOf(maximoGasto(1)));
         
         //MINIMO 
-        JFrameAnalytics.jTextFieldPrecioMinCompras.setText(String.valueOf(minimoPrecio(1)));
+        JFrameAnalytics.jTextFieldPrecioMinCompras.setText(String.valueOf(minimoGasto(1)));
         
         //----------FIN COMPRAS------------
         
         //-----------SERVICIOS(columna 3)-----------------
                 //TOTAL 
-        JFrameAnalytics.jTextFieldTotalServicios.setText(String.valueOf(totalPrecio(3)));
+        JFrameAnalytics.jTextFieldTotalServicios.setText(String.valueOf(totalGasto(3)));
+          //PROMEDIO
+        JFrameAnalytics.jTextFieldpromedioServicios.setText(String.valueOf(promedioGastos(3)));
         
         //MAXIMO 
-        JFrameAnalytics.jTextFieldPrecioMaxServicios.setText(String.valueOf(maximoPrecio(3)));
+        JFrameAnalytics.jTextFieldPrecioMaxServicios.setText(String.valueOf(maximoGasto(3)));
         
         //MINIMO 
-        JFrameAnalytics.jTextFieldPrecioMinServicios.setText(String.valueOf(minimoPrecio(3)));
+        JFrameAnalytics.jTextFieldPrecioMinServicios.setText(String.valueOf(minimoGasto(3)));
         
         //-----------FIN SERVICIOS------------
         
         
         //---------TRANSPORTE(columna 5)--------------
                //TOTAL 
-        JFrameAnalytics.jTextFieldTotalTransporte.setText(String.valueOf(totalPrecio(5)));
+        JFrameAnalytics.jTextFieldTotalTransporte.setText(String.valueOf(totalGasto(5)));
+          //PROMEDIO
+        JFrameAnalytics.jTextFieldpromedioTransporte.setText(String.valueOf(promedioGastos(5)));
         
         //MAXIMO 
-        JFrameAnalytics.jTextFieldPrecioMaxTransporte.setText(String.valueOf(maximoPrecio(5)));
+        JFrameAnalytics.jTextFieldPrecioMaxTransporte.setText(String.valueOf(maximoGasto(5)));
         
         //MINIMO 
-        JFrameAnalytics.jTextFieldPrecioMinTransporte.setText(String.valueOf(minimoPrecio(5)));
+        JFrameAnalytics.jTextFieldPrecioMinTransporte.setText(String.valueOf(minimoGasto(5)));
 
         //---------FIN TRANSPORTE--------
         

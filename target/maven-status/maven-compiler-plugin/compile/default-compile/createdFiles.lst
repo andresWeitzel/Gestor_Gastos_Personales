@@ -1,6 +1,7 @@
 mypackage\test\TestConnector.class
 mypackage\gui\JFrameMenuGestorGastos$10.class
 mypackage\gui\JFrameVerGastos$5.class
+mypackage\gui\JFrameAnalytics$25.class
 mypackage\gui\JFrameAnalytics$15.class
 mypackage\gui\JFrameMenuGestorGastos$9.class
 mypackage\gui\JFrameMenuGestorGastos$2.class
@@ -16,6 +17,7 @@ mypackage\gui\JFrameAnalytics$6.class
 mypackage\gui\JFrameMenuGestorGastos$3.class
 mypackage\gui\JFrameVerGastos$6.class
 mypackage\gui\JFrameMenuGestorGastos$5.class
+mypackage\gui\JFrameAnalytics$22.class
 mypackage\gui\JFrameAnalytics$9.class
 mypackage\gui\JFrameActualizarGastos$6.class
 mypackage\gui\JFrameAnalytics$17.class
@@ -29,6 +31,7 @@ mypackage\gui\JFrameActualizarGastos$10.class
 mypackage\gui\JFrameActualizarGastos$9.class
 mypackage\gui\JFrameAnalytics$5.class
 mypackage\gui\JFrameMenuGestorGastos$4.class
+mypackage\gui\JFrameAnalytics$23.class
 mypackage\gui\JFrameActualizarGastos$2.class
 mypackage\gui\JFrameMenuGestorGastos.class
 mypackage\gui\JFrameVerGastos.class
@@ -38,7 +41,7 @@ mypackage\gui\JFrameAnalytics$8.class
 mypackage\gui\JFrameAnalytics$13.class
 mypackage\gui\JFrameAnalytics$10.class
 mypackage\gui\JFrameMenuGestorGastos$8.class
-mypackage\gui\gastoRepository.class
+mypackage\gui\JFrameAnalytics$20.class
 mypackage\connector\LocalConnector.class
 mypackage\gui\JFrameVerGastos$3.class
 mypackage\gui\JFrameActualizarGastos$11.class
@@ -52,6 +55,7 @@ mypackage\gui\JFrameAnalytics$12.class
 mypackage\gui\JFrameActualizarGastos$1.class
 mypackage\gui\JFrameVerGastos$1.class
 mypackage\entities\Gasto.class
+mypackage\gui\JFrameAnalytics$21.class
 mypackage\gui\JFrameAnalytics.class
 mypackage\gui\JFrameMenuGestorGastos$7.class
 mypackage\gui\JFrameAnalytics$7.class
@@ -59,3 +63,4 @@ mypackage\gui\JFrameVerGastos$4.class
 mypackage\gui\JFrameAnalytics$19.class
 mypackage\gui\JFrameVerGastos$7.class
 mypackage\gui\JFrameActualizarGastos$8.class
+mypackage\gui\JFrameAnalytics$24.class

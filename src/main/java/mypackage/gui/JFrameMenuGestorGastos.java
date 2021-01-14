@@ -6,11 +6,14 @@
 package mypackage.gui;
 
 import java.awt.event.KeyEvent;
+import static java.lang.Float.max;
+import static java.lang.Float.min;
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
 import mypackage.entities.Gasto;
 import mypackage.repositories.interfaces.I_GastoRepository;
 import mypackage.repositories.jdbc.GastoRepository;
+import mypackage.utils.swing.Table;
 
 /**
  *
@@ -23,7 +26,96 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
     /** Creates new form JFrameMenuGastos */
     public JFrameMenuGestorGastos() {
         initComponents();
+        //JTABLE OCULTA EN EL JFRAME, ATENTI
+        listarGastos();
     }
+    
+    
+        public void listarGastos() {
+            
+        //JTABLE OCULTA EN EL JFRAME, ATENTI
+        new Table().cargar(jTableListaGastos, gastoRepository.getAll());
+    }
+        
+     //-------------ANALYTICS------------------------
+    
+    public  double totalGasto(int columnaTabla){
+       
+        float sum=0;
+        try {
+             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
+                 
+            sum +=Math.round(Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString()));
+            
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       
+        return sum;
+    }
+    
+    public  double promedioGastos(int columnaTabla){
+       
+        float sum=0;
+       float  promedio=0;
+        try {
+             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
+                 
+            sum +=Math.round(Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString()));
+            
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        promedio=Math.round(sum/jTableListaGastos.getRowCount());
+       
+        return promedio;
+    }
+    
+    
+    
+        public  double maximoGasto(int columnaTabla){
+        float max=0;
+        try {
+             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
+                 
+            max=Math.round(max(max,  Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString())));
+            
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       
+        return max;
+    }
+        
+        
+        
+        
+        public  double minimoGasto(int columnaTabla){
+        float min=0;
+        try {
+             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
+                 
+            min=Math.round(min(min,  Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString())));
+           
+            
+        }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       
+        return min;
+    }
+    
+        //-------------ANALYTICS------------------------
+    
 
     /** This method is called from within the constructor to
      * initialize the form.
@@ -60,6 +152,8 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jButtonAnalytics = new javax.swing.JButton();
         jLabelFecha1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableListaGastos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -207,6 +301,21 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
         jLabelFecha1.setText("(ej: 2020-01-01)");
         jDesktopPane1.add(jLabelFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 540, 130, 40));
 
+        jTableListaGastos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 18))); // NOI18N
+        jTableListaGastos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jTableListaGastos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jTableListaGastos.setToolTipText("");
+        jScrollPane1.setViewportView(jTableListaGastos);
+
+        jDesktopPane1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 0, -1));
+
         getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 780));
 
         pack();
@@ -228,7 +337,54 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVerGastosActionPerformed
 
     private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
-        // TODO add your handling code here:
+         new JFrameAnalytics().setVisible(true);
+       
+        //Enviamos lso datos al jframe de analytics
+        //IMPORTANTE-->EL JTEXTFIELD DEL OTRO JFRAME DEBERA ESTAR EN PUBLIC Y STATIC
+        
+        //------COMPRAS(columna 1)-----
+        //TOTAL 
+        JFrameAnalytics.jTextFieldTotalCompras.setText(String.valueOf(totalGasto(1)));
+        //PROMEDIO
+        JFrameAnalytics.jTextFieldpromedioCompras.setText(String.valueOf(promedioGastos(1)));
+        
+        //MAXIMO 
+        JFrameAnalytics.jTextFieldPrecioMaxCompras.setText(String.valueOf(maximoGasto(1)));
+        
+        //MINIMO 
+        JFrameAnalytics.jTextFieldPrecioMinCompras.setText(String.valueOf(minimoGasto(1)));
+        
+        //----------FIN COMPRAS------------
+        
+        //-----------SERVICIOS(columna 3)-----------------
+                //TOTAL 
+        JFrameAnalytics.jTextFieldTotalServicios.setText(String.valueOf(totalGasto(3)));
+          //PROMEDIO
+        JFrameAnalytics.jTextFieldpromedioServicios.setText(String.valueOf(promedioGastos(3)));
+        
+        //MAXIMO 
+        JFrameAnalytics.jTextFieldPrecioMaxServicios.setText(String.valueOf(maximoGasto(3)));
+        
+        //MINIMO 
+        JFrameAnalytics.jTextFieldPrecioMinServicios.setText(String.valueOf(minimoGasto(3)));
+        
+        //-----------FIN SERVICIOS------------
+        
+        
+        //---------TRANSPORTE(columna 5)--------------
+               //TOTAL 
+        JFrameAnalytics.jTextFieldTotalTransporte.setText(String.valueOf(totalGasto(5)));
+          //PROMEDIO
+        JFrameAnalytics.jTextFieldpromedioTransporte.setText(String.valueOf(promedioGastos(5)));
+        
+        //MAXIMO 
+        JFrameAnalytics.jTextFieldPrecioMaxTransporte.setText(String.valueOf(maximoGasto(5)));
+        
+        //MINIMO 
+        JFrameAnalytics.jTextFieldPrecioMinTransporte.setText(String.valueOf(minimoGasto(5)));
+
+        //---------FIN TRANSPORTE--------
+        
     }//GEN-LAST:event_jButtonAnalyticsActionPerformed
 
     private void jButtonAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarActionPerformed
@@ -431,11 +587,13 @@ public class JFrameMenuGestorGastos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPrecioServicios;
     private javax.swing.JLabel jLabelPrecioTransporte;
     private javax.swing.JLabel jLabelTitulo;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JTable jTableListaGastos;
     private javax.swing.JTextField jTextFieldComentarioCompras;
     private javax.swing.JTextField jTextFieldComentarioServicios;
     private javax.swing.JTextField jTextFieldComentarioTransporte;

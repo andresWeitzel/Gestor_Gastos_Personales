@@ -71,6 +71,12 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jTextFieldPrecioMaxTransporte = new javax.swing.JTextField();
         jTextFieldPrecioMinTransporte = new javax.swing.JTextField();
         jLabelPrecioMinTransporte = new javax.swing.JLabel();
+        jLabelPromedioCompras = new javax.swing.JLabel();
+        jTextFieldpromedioCompras = new javax.swing.JTextField();
+        jLabelPromedioServicios = new javax.swing.JLabel();
+        jTextFieldpromedioServicios = new javax.swing.JTextField();
+        jLabelPromedioTransporte = new javax.swing.JLabel();
+        jTextFieldpromedioTransporte = new javax.swing.JTextField();
 
         jLabelTitulo1.setFont(new java.awt.Font("Arial Black", 1, 28)); // NOI18N
         jLabelTitulo1.setForeground(new java.awt.Color(255, 255, 255));
@@ -88,8 +94,8 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
         jLabelTotalCompras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelTotalCompras.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTotalCompras.setText("Precio Total : $");
-        jDesktopPane1.add(jLabelTotalCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, 50));
+        jLabelTotalCompras.setText("Gasto Total : $");
+        jDesktopPane1.add(jLabelTotalCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, 50));
 
         jTextFieldTotalCompras.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldTotalCompras.addActionListener(new java.awt.event.ActionListener() {
@@ -102,12 +108,12 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldTotalComprasKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldTotalCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 150, 30));
+        jDesktopPane1.add(jTextFieldTotalCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, 150, 30));
 
         jLabelPrecioMaximoCompras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelPrecioMaximoCompras.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPrecioMaximoCompras.setText("Precio Máximo: $");
-        jDesktopPane1.add(jLabelPrecioMaximoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, 50));
+        jLabelPrecioMaximoCompras.setText("Gasto Máximo: $");
+        jDesktopPane1.add(jLabelPrecioMaximoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, -1, 50));
 
         jTextFieldPrecioMaxCompras.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldPrecioMaxCompras.addActionListener(new java.awt.event.ActionListener() {
@@ -120,12 +126,12 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldPrecioMaxComprasKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldPrecioMaxCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 150, 30));
+        jDesktopPane1.add(jTextFieldPrecioMaxCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 260, 150, 30));
 
         jLabelPrecioMinimoCompras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelPrecioMinimoCompras.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPrecioMinimoCompras.setText("Precio Mínimo: $");
-        jDesktopPane1.add(jLabelPrecioMinimoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, 150, 40));
+        jLabelPrecioMinimoCompras.setText("Gasto Mínimo: $");
+        jDesktopPane1.add(jLabelPrecioMinimoCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 150, 40));
 
         jTextFieldPrecioMinCompras.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldPrecioMinCompras.addActionListener(new java.awt.event.ActionListener() {
@@ -138,8 +144,8 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldPrecioMinComprasKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldPrecioMinCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 150, 30));
-        jDesktopPane1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 336, 570, 10));
+        jDesktopPane1.add(jTextFieldPrecioMinCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 150, 30));
+        jDesktopPane1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 366, 570, 10));
 
         jLabelTotalCompras1.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabelTotalCompras1.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,7 +155,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         jLabelTotalServicios.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabelTotalServicios.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTotalServicios.setText("SERVICIOS");
-        jDesktopPane1.add(jLabelTotalServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 140, 50));
+        jDesktopPane1.add(jLabelTotalServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 140, 40));
         jDesktopPane1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 52, 270, 0));
         jDesktopPane1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 240, 30));
         jDesktopPane1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 260, -1));
@@ -157,8 +163,8 @@ public class JFrameAnalytics extends javax.swing.JFrame {
 
         jLabelTotalTransporte.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelTotalTransporte.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTotalTransporte.setText("Precio Total: $");
-        jDesktopPane1.add(jLabelTotalTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 670, -1, 50));
+        jLabelTotalTransporte.setText("Gasto Total: $");
+        jDesktopPane1.add(jLabelTotalTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 740, -1, 50));
 
         jTextFieldTotalServicios.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldTotalServicios.addActionListener(new java.awt.event.ActionListener() {
@@ -171,12 +177,12 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldTotalServiciosKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldTotalServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 150, 30));
+        jDesktopPane1.add(jTextFieldTotalServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 460, 150, 30));
 
         jLabelPrecioMaximoServicios.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelPrecioMaximoServicios.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPrecioMaximoServicios.setText("Precio Máximo: $");
-        jDesktopPane1.add(jLabelPrecioMaximoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, -1, 50));
+        jLabelPrecioMaximoServicios.setText("Gasto Máximo: $");
+        jDesktopPane1.add(jLabelPrecioMaximoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 550, -1, 50));
 
         jTextFieldPrecioMaxServicios.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldPrecioMaxServicios.addActionListener(new java.awt.event.ActionListener() {
@@ -189,15 +195,15 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldPrecioMaxServiciosKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldPrecioMaxServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 490, 150, 30));
+        jDesktopPane1.add(jTextFieldPrecioMaxServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 560, 150, 30));
         jDesktopPane1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 92, 240, 0));
         jDesktopPane1.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 260, 10));
         jDesktopPane1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 362, 270, 0));
 
         jLabelPrecioMaximoServicios1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelPrecioMaximoServicios1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPrecioMaximoServicios1.setText("Precio Mínimo: $");
-        jDesktopPane1.add(jLabelPrecioMaximoServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 530, -1, 50));
+        jLabelPrecioMaximoServicios1.setText("Gasto Mínimo: $");
+        jDesktopPane1.add(jLabelPrecioMaximoServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 600, -1, 50));
 
         jTextFieldPrecioMinServicios.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldPrecioMinServicios.addActionListener(new java.awt.event.ActionListener() {
@@ -210,29 +216,29 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldPrecioMinServiciosKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldPrecioMinServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 150, 30));
-        jDesktopPane1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, 230, -1));
+        jDesktopPane1.add(jTextFieldPrecioMinServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 610, 150, 30));
+        jDesktopPane1.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, 230, 10));
         jDesktopPane1.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 402, 180, 0));
         jDesktopPane1.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 2, -1, 20));
         jDesktopPane1.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 440, -1));
         jDesktopPane1.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 400, -1, -1));
         jDesktopPane1.add(jSeparator17, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 400, 180, 0));
-        jDesktopPane1.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 400, 220, -1));
-        jDesktopPane1.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 580, -1));
-        jDesktopPane1.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 610, 240, -1));
+        jDesktopPane1.add(jSeparator18, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 440, 220, 10));
+        jDesktopPane1.add(jSeparator19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 650, 580, 10));
+        jDesktopPane1.add(jSeparator20, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 670, 240, 10));
 
         jLabelTotalServicios1.setFont(new java.awt.Font("Arial Black", 1, 20)); // NOI18N
         jLabelTotalServicios1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelTotalServicios1.setText("TRANSPORTE");
-        jDesktopPane1.add(jLabelTotalServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, 160, 50));
+        jDesktopPane1.add(jLabelTotalServicios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 670, 160, 50));
         jDesktopPane1.add(jSeparator21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 652, 200, 0));
         jDesktopPane1.add(jSeparator22, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 652, 200, 0));
-        jDesktopPane1.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 660, 240, 20));
+        jDesktopPane1.add(jSeparator24, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 720, 240, 20));
 
         jLabelTotalCompras3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelTotalCompras3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelTotalCompras3.setText("Precio Total: $");
-        jDesktopPane1.add(jLabelTotalCompras3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 420, -1, 50));
+        jLabelTotalCompras3.setText("GastoTotal: $");
+        jDesktopPane1.add(jLabelTotalCompras3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, -1, 50));
 
         jTextFieldTotalTransporte.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldTotalTransporte.addActionListener(new java.awt.event.ActionListener() {
@@ -245,12 +251,12 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldTotalTransporteKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldTotalTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 680, 150, 30));
+        jDesktopPane1.add(jTextFieldTotalTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 750, 150, 30));
 
         jLabelPrecioMaximoTransporte.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelPrecioMaximoTransporte.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPrecioMaximoTransporte.setText("Precio Máximo: $");
-        jDesktopPane1.add(jLabelPrecioMaximoTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 720, -1, 50));
+        jLabelPrecioMaximoTransporte.setText("Gasto Máximo: $");
+        jDesktopPane1.add(jLabelPrecioMaximoTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 840, -1, 50));
 
         jTextFieldPrecioMaxTransporte.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldPrecioMaxTransporte.addActionListener(new java.awt.event.ActionListener() {
@@ -263,7 +269,7 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldPrecioMaxTransporteKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldPrecioMaxTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, 150, 30));
+        jDesktopPane1.add(jTextFieldPrecioMaxTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 850, 150, 30));
 
         jTextFieldPrecioMinTransporte.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
         jTextFieldPrecioMinTransporte.addActionListener(new java.awt.event.ActionListener() {
@@ -276,14 +282,68 @@ public class JFrameAnalytics extends javax.swing.JFrame {
                 jTextFieldPrecioMinTransporteKeyTyped(evt);
             }
         });
-        jDesktopPane1.add(jTextFieldPrecioMinTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 780, 150, 30));
+        jDesktopPane1.add(jTextFieldPrecioMinTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 900, 150, 30));
 
         jLabelPrecioMinTransporte.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelPrecioMinTransporte.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPrecioMinTransporte.setText("Precio Mínimo: $");
-        jDesktopPane1.add(jLabelPrecioMinTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 770, -1, 50));
+        jLabelPrecioMinTransporte.setText("Gasto Mínimo: $");
+        jDesktopPane1.add(jLabelPrecioMinTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 890, -1, 50));
 
-        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 850));
+        jLabelPromedioCompras.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelPromedioCompras.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPromedioCompras.setText("Gasto Promedio : $");
+        jDesktopPane1.add(jLabelPromedioCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, 50));
+
+        jTextFieldpromedioCompras.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jTextFieldpromedioCompras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldpromedioComprasActionPerformed(evt);
+            }
+        });
+        jTextFieldpromedioCompras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldpromedioComprasKeyTyped(evt);
+            }
+        });
+        jDesktopPane1.add(jTextFieldpromedioCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 210, 150, 30));
+
+        jLabelPromedioServicios.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelPromedioServicios.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPromedioServicios.setText("Gasto Promedio : $");
+        jDesktopPane1.add(jLabelPromedioServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 500, -1, 50));
+
+        jTextFieldpromedioServicios.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jTextFieldpromedioServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldpromedioServiciosActionPerformed(evt);
+            }
+        });
+        jTextFieldpromedioServicios.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldpromedioServiciosKeyTyped(evt);
+            }
+        });
+        jDesktopPane1.add(jTextFieldpromedioServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 510, 150, 30));
+
+        jLabelPromedioTransporte.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelPromedioTransporte.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPromedioTransporte.setText("Gasto Promedio : $");
+        jDesktopPane1.add(jLabelPromedioTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 790, -1, 50));
+
+        jTextFieldpromedioTransporte.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
+        jTextFieldpromedioTransporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldpromedioTransporteActionPerformed(evt);
+            }
+        });
+        jTextFieldpromedioTransporte.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextFieldpromedioTransporteKeyTyped(evt);
+            }
+        });
+        jDesktopPane1.add(jTextFieldpromedioTransporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 800, 150, 30));
+
+        getContentPane().add(jDesktopPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 970));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -360,6 +420,30 @@ public class JFrameAnalytics extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldPrecioMinTransporteKeyTyped
 
+    private void jTextFieldpromedioComprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldpromedioComprasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldpromedioComprasActionPerformed
+
+    private void jTextFieldpromedioComprasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldpromedioComprasKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldpromedioComprasKeyTyped
+
+    private void jTextFieldpromedioServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldpromedioServiciosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldpromedioServiciosActionPerformed
+
+    private void jTextFieldpromedioServiciosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldpromedioServiciosKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldpromedioServiciosKeyTyped
+
+    private void jTextFieldpromedioTransporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldpromedioTransporteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldpromedioTransporteActionPerformed
+
+    private void jTextFieldpromedioTransporteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldpromedioTransporteKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldpromedioTransporteKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -404,6 +488,9 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPrecioMaximoTransporte;
     private javax.swing.JLabel jLabelPrecioMinTransporte;
     private javax.swing.JLabel jLabelPrecioMinimoCompras;
+    private javax.swing.JLabel jLabelPromedioCompras;
+    private javax.swing.JLabel jLabelPromedioServicios;
+    private javax.swing.JLabel jLabelPromedioTransporte;
     private javax.swing.JLabel jLabelTitulo;
     private javax.swing.JLabel jLabelTitulo1;
     private javax.swing.JLabel jLabelTotalCompras;
@@ -441,5 +528,8 @@ public class JFrameAnalytics extends javax.swing.JFrame {
     public static javax.swing.JTextField jTextFieldTotalCompras;
     public static javax.swing.JTextField jTextFieldTotalServicios;
     public static javax.swing.JTextField jTextFieldTotalTransporte;
+    public static javax.swing.JTextField jTextFieldpromedioCompras;
+    public static javax.swing.JTextField jTextFieldpromedioServicios;
+    public static javax.swing.JTextField jTextFieldpromedioTransporte;
     // End of variables declaration//GEN-END:variables
 }
