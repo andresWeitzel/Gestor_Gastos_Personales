@@ -5,7 +5,7 @@
 </br>
 
 ## Vista de Inicio de la Desktop App 1/3
-*En la vista inicial si se desea ingresar un gasto se deberá ingresar necesariamente al menos 1(compras, servicios, transporte) con su fecha correspondiente.Este JFrame posee control de formulario, estrictamente implementado como la base de datos creada.
+*En la vista inicial si se desea ingresar un gasto se deberá ingresar necesariamente al menos 1 gasto(compras, servicios, transporte) con su fecha correspondiente.Este JFrame posee control de formulario, estrictamente implementado como la base de datos creada.
 En las esquinas inferiores se encuentran las secciónes de ANALYTICS y VER GASTOS. Cada una se explicará seguidamente y corresponden a JFrames independientes.*
 
 ![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(328).png)
@@ -13,8 +13,8 @@ En las esquinas inferiores se encuentran las secciónes de ANALYTICS y VER GASTO
 </br>
 
 ## Vista de Inicio de la Desktop App 2/3
-*Esta es la vista de gestión principal de los gastos. Desarrollé un filtro de búsqueda especifico en relación al campo deseado. Dentro de los filters de Java8 se especifico funciones en las cuales busquen el comienzo o que contengan al menos lo deseado en los registros.
-Para ACTUALIZAR o ELIMINAR algún registro se deberá seleccionar el deseado o mismo la aplicacion te avisará con un mensaje de alerta (también posee un control de seleccion).
+*Esta es la vista de gestión principal de los gastos. Desarrollé un filtro de búsqueda especifico en relación al campo deseado. Dentro de los filters de Java8 se especificó funciones en las cuáles busquen el comienzo o que contengan al menos lo deseado en los registros.
+Para ACTUALIZAR o ELIMINAR algún registro se deberá seleccionar el deseado o mismo la aplicación te avisará con un mensaje de alerta (también posee un control de seleccion).
 En los bordes laterales tenemos las secciones ANALYTICS(último inciso) Y REFRESCAR LISTA(recarga la tabla).*
 
 </br>
@@ -23,8 +23,8 @@ En los bordes laterales tenemos las secciones ANALYTICS(último inciso) Y REFRES
 
 
 ## Vista de Inicio de la Desktop App 3/3
-*Esta vista(se puede abrir desde el JFrame inicial como en el de ver gastos) posee funciones estadisticas que nos permiten recopilar cierta información desde lo que se carga del JTable(mismo puede ser de la db de forma directa).En este caso solo 4 funciones relevantes(valor total, promedio, mínimo y máximo) aplicando la clase Math.
-Notar que los GASTOS MÍNIMOS estan en 0.0 , la db la diseñe con formato para el campo Gasto de tipo float y corresponde al minimo valor entro de este.*
+*Esta vista(se puede abrir desde el JFrame inicial como en el de ver gastos) poseé funciones estadísticas que nos permiten recopilar cierta información desde lo que se carga del JTable(mismo puede ser de la db de forma directa).En este caso solo 4 funciones relevantes(valor total, promedio, mínimo y máximo) aplicando la clase Math.
+Notar que los GASTOS MÍNIMOS estan en 0.0 , la db la diseñe con formato para el campo Gasto de tipo float y corresponde al mínimo valor dentro de este.*
 
 ![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(330).png)
 
