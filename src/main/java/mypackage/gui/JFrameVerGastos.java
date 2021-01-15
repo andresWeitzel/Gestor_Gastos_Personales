@@ -7,6 +7,7 @@ package mypackage.gui;
 
 import static java.lang.Float.max;
 import static java.lang.Float.min;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import mypackage.connector.LocalConnector;
@@ -94,22 +95,26 @@ public class JFrameVerGastos extends javax.swing.JFrame {
         
         
         
-        public  double minimoGasto(int columnaTabla){
-        float min=0;
+        public float minimoGasto(int columnaTabla) {
+
+        float min = Float.parseFloat(jTableListaGastos.getValueAt(0, columnaTabla).toString());
+
         try {
-             for(int i=0; i<jTableListaGastos.getRowCount(); i++){
-                 
-            min=Math.round(min(min,  Float.parseFloat(jTableListaGastos.getValueAt( i, columnaTabla).toString())));
-           
-            
-        }
-            
+            for (int i = 0; i < jTableListaGastos.getRowCount(); i++) {
+
+                // min = Math.round(min(min, Integer.parseInt(jTableListaEmpleados.getValueAt(i, columnaTabla).toString())));
+                min = Math.round(min(min, Float.parseFloat(jTableListaGastos.getValueAt(i, columnaTabla).toString()) ));
+
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-       
+
         return min;
     }
+            
+
     
         //-------------ANALYTICS------------------------
     
@@ -329,7 +334,24 @@ public class JFrameVerGastos extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEliminarActionPerformed
 
     private void jButtonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonActualizarActionPerformed
-         new JFrameActualizarGastos().setVisible(true);
+        
+        
+        int filaTablaGasto=jTableListaGastos.getSelectedRow();
+       
+        
+        if(filaTablaGasto == -1){
+              
+            JOptionPane.showMessageDialog(this, "SELECCIONE ALGUN GASTO QUE DESEE ACTUALIZAR DE LA LISTA!");
+          
+            return;
+        }
+        
+        new JFrameActualizarGastos().setVisible(true);
+        
+          int idGasto=(int)jTableListaGastos.getValueAt(filaTablaGasto, 0);
+          
+          //Asegurarse que el field del jframe sea public y static
+         JFrameActualizarGastos.jTextFieldId.setText(String.valueOf(idGasto));
     }//GEN-LAST:event_jButtonActualizarActionPerformed
 
     private void jTextFieldBusquedaGastosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBusquedaGastosActionPerformed

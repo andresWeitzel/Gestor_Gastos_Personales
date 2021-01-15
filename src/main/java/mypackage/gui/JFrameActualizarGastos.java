@@ -11,6 +11,7 @@ import mypackage.connector.LocalConnector;
 import mypackage.entities.Gasto;
 import mypackage.repositories.interfaces.I_GastoRepository;
 import mypackage.repositories.jdbc.GastoRepository;
+import mypackage.utils.swing.Table;
 
 
 /**
@@ -60,7 +61,6 @@ public class JFrameActualizarGastos extends javax.swing.JFrame {
         jLabelFecha = new javax.swing.JLabel();
         jTextFieldFecha = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
-        jButtonAnalytics = new javax.swing.JButton();
         jLabelFecha1 = new javax.swing.JLabel();
         jLabelPrecioCompras = new javax.swing.JLabel();
         jTextFieldId = new javax.swing.JTextField();
@@ -193,17 +193,6 @@ public class JFrameActualizarGastos extends javax.swing.JFrame {
         });
         jDesktopPane1.add(jTextFieldFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 540, 120, 40));
         jDesktopPane1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 580, 290, -1));
-
-        jButtonAnalytics.setBackground(new java.awt.Color(0, 34, 103));
-        jButtonAnalytics.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButtonAnalytics.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAnalytics.setText("ANALYTICS");
-        jButtonAnalytics.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAnalyticsActionPerformed(evt);
-            }
-        });
-        jDesktopPane1.add(jButtonAnalytics, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 740, 150, 50));
 
         jLabelFecha1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabelFecha1.setForeground(new java.awt.Color(255, 255, 255));
@@ -396,7 +385,8 @@ public class JFrameActualizarGastos extends javax.swing.JFrame {
                         + "\nFECHA:                              " + gastoActualizado.getFecha() + "\n"
                         + separador
                     );
-
+                    
+                  
                 }
 
             }
@@ -423,9 +413,6 @@ public class JFrameActualizarGastos extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jTextFieldFechaKeyTyped
-
-    private void jButtonAnalyticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAnalyticsActionPerformed
-    new JFrameAnalytics().setVisible(true);    }//GEN-LAST:event_jButtonAnalyticsActionPerformed
 
     private void jTextFieldIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldIdActionPerformed
         // TODO add your handling code here:
@@ -484,7 +471,6 @@ public class JFrameActualizarGastos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonActualizar;
-    private javax.swing.JButton jButtonAnalytics;
     private javax.swing.JButton jButtonLimpiar;
     private javax.swing.JButton jButtonVerGastos;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -507,7 +493,7 @@ public class JFrameActualizarGastos extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldComentarioServicios;
     private javax.swing.JTextField jTextFieldComentarioTransporte;
     private javax.swing.JTextField jTextFieldFecha;
-    private javax.swing.JTextField jTextFieldId;
+    public static javax.swing.JTextField jTextFieldId;
     private javax.swing.JTextField jTextFieldPrecioCompras;
     private javax.swing.JTextField jTextFieldPrecioServicios;
     private javax.swing.JTextField jTextFieldPrecioTransporte;
