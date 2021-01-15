@@ -28,8 +28,6 @@ Notar que los GASTOS MÍNIMOS estan en 0.0 , la db la diseñe con formato para e
 
 ![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(330).png)
 
-
-
  </br>
 
 | **Tecnologías** | **Versión** |               
@@ -78,6 +76,46 @@ Notar que los GASTOS MÍNIMOS estan en 0.0 , la db la diseñe con formato para e
 </br>
 
 <hr>
+
+</br>
+
+## Test de la Desktop App
+### En Windows
+
+#### 1)Descargar el proyecto o clonar el repositorio con git
+
+#### 2)Levantar el servicio mysql desde algun motor de base de datos o desde el cmd/powershell.
+
+#### 3)Ejecutar el DDL/DML desde algún IDE o paquete de servidores, paquete de gestión, etc. (XAMPP, LAMPP, MYSQL WORBEANCH..)
+`El DDL/DML lo encontras dentro de la carpeta db_gastos/sql o mismo dentro del proyecto de Java en ../mypackage.gui.sql`
+
+#### 4)Ejecutar el proyecto desde algún IDE deseado.
+
+</br>
+
+### En Linux
+
+#### 1)Abrir la Terminal y Actualizar la lista de repositorios
+* sudo apt -y update
+
+#### 2)Levantar y verificar que esta corriendo el servicio de mysql(Suponiendo que se tiene instalado mysql)
+* sudo service mysql start
+* sudo service mysql status
+
+#### 3)Clonar el repositorio del Proyecto
+* git clone ***https://github.com/andresWeitzel/Gestor_Gastos_Personales.git***
+
+#### 4)Posicionarnos sobre el directorio del proyecto y visualizar el contenido para su integridad
+* cd rutaEjemplo/proyectoClonado
+* ls -l
+
+#### 5)Ejecutar el DDL/DML del proyecto desde el IDE deseado u otro Software
+
+#### 6)Ejecutar el proyecto desde el IDE deseado
+
+
+
+</br>
 
 ## Más Información
 
