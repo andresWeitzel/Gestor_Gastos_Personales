@@ -6,15 +6,15 @@
 
 ## Vista de Inicio de la Desktop App 1/3
 
-![Index app](https://github.com/andresWeitzel/Graphics/tree/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(328).png)
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(328).png)
 
 ## Vista de Inicio de la Desktop App 2/3
 
-![Index app](https://github.com/andresWeitzel/Graphics/tree/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(329).png)
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(329).png)
 
 ## Vista de Inicio de la Desktop App 3/3
 
-![Index app](https://github.com/andresWeitzel/Graphics/tree/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(330).png)
+![Index app](https://github.com/andresWeitzel/Graphics/blob/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(330).png)
 
 
 
