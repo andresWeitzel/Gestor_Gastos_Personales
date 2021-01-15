@@ -2,6 +2,22 @@
 
 **Se desarrolla una GUI en Java Swing con Maven para la gestión de Gastos Personales implementando JDBC en MYSQL.**
 
+</br>
+
+## Vista de Inicio de la Desktop App 1/3
+
+![Index app](https://github.com/andresWeitzel/Graphics/tree/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(328).png)
+
+## Vista de Inicio de la Desktop App 2/3
+
+![Index app](https://github.com/andresWeitzel/Graphics/tree/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(329).png)
+
+## Vista de Inicio de la Desktop App 3/3
+
+![Index app](https://github.com/andresWeitzel/Graphics/tree/main/Proyectos/GestorGastosPersonales_app/Captura%20de%20pantalla%20(330).png)
+
+
+
  </br>
 
 | **Tecnologías** | **Versión** |               
